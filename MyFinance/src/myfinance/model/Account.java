@@ -1,6 +1,7 @@
 
 package myfinance.model;
 
+import java.util.List;
 import java.util.Objects;
 import myfinance.exception.ModelException;
 
@@ -82,9 +83,24 @@ public class Account extends Common{
          return title;
      }
     
-     public void setAmountFromTransactionsAndTransfers() {
+     public void setAmountFromTransactionsAndTransfers(List<Transaction> transactions, List<Transfer> transfers) {
+         this.amount = startAmount;
+         for (Transaction transaction: transactions) {
+             if(transaction.getAccount().equals(this)) {
+                 this.amount += transaction.getAmount();
+             }
+             
+         }
      
-     
+           for (Transfer transfer: transfers) {
+               if(transfer.getFromAccount().equals(this)) {
+                   this.amount -= transfer.getFromAmount();
+               }
+               if(transfer.getToAccount().equals(this)) {
+                   this.amount += transfer.getToAmount();
+               }
+           }
+         
      }
      
      
