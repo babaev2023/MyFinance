@@ -7,7 +7,7 @@ import myfinance.settings.Text;
  *
  * @author Stepan Babaev
  */
-public class ModelException {
+public class ModelException extends Exception{
     
     public static final int TITLE_EMPTY = 1;
     public static final int IS_EXISTS = 2;
