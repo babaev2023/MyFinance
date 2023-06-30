@@ -15,7 +15,7 @@ import myfinance.model.*;
 public class Wrapper {
     
     
-    private List<Article> articles;
+private List<Article> articles;
     private List<Account> accounts;
     private List<Transaction> transactions;
     private List<Transfer> transfers;
@@ -65,5 +65,6 @@ public class Wrapper {
     public void setCurrencies(List<Currency> currencies) {
         this.currencies = currencies;
     }
+    
     
 }

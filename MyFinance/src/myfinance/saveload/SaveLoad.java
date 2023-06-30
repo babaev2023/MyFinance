@@ -1,13 +1,14 @@
 
 package myfinance.saveload;
 
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import myfinance.settings.Settings;
+
 /**
  *
  * @author Stepan Babaev
@@ -29,8 +30,7 @@ public class SaveLoad {
         } catch (JAXBException ex) {
             System.out.println("Файл не существует!");
         }
-        
- }
+    }
     
     public static void save(SaveData sd) {
         try {
@@ -49,8 +49,8 @@ public class SaveLoad {
             m.marshal(wrapper, Settings.getFileSave());
             
         } catch (JAXBException ex) {
-           System.out.println("Файл не сохранен!");
+            Logger.getLogger(SaveLoad.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+     }
     
 }
