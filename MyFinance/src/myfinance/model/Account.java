@@ -4,6 +4,7 @@ package myfinance.model;
 import java.util.List;
 import java.util.Objects;
 import myfinance.exception.ModelException;
+import myfinance.saveload.SaveData;
 
 /**
  *
@@ -102,6 +103,22 @@ public class Account extends Common{
            }
          
      }
+     
+    @Override
+    public void postAdd(SaveData sd) {
+        setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
+    }
+    
+    @Override
+    public void postEdit(SaveData sd) {
+        for (Transaction t : sd.getTransactions())
+            if (t.getAccount().equals(sd.getOldCommon())) t.setAccount(this);
+        for (Transfer t : sd.getTransfers()) {
+            if (t.getFromAccount().equals(sd.getOldCommon())) t.setFromAccount(this);
+            if (t.getToAccount().equals(sd.getOldCommon())) t.setToAccount(this);
+        }
+        setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
+    }
      
      
 }

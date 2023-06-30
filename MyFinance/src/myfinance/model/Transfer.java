@@ -3,12 +3,13 @@ package myfinance.model;
 
 import java.util.Date;
 import myfinance.exception.ModelException;
+import myfinance.saveload.SaveData;
 
 /**
  *
  * @author Stepan Babaev
  */
-public class Transfer {
+public class Transfer extends Common{
     
     private Account fromAccount;
     private Account toAccount;
@@ -99,6 +100,26 @@ public class Transfer {
     @Override
     public String toString() {
         return "Transfer{" + "fromAccount=" + fromAccount + ", toAccount=" + toAccount + ", fromAmount=" + fromAmount + ", toAmount=" + toAmount + ", notice=" + notice + ", date=" + date + '}';
+    }
+    
+    @Override
+    public void postAdd(SaveData sd) {
+        setAmounts(sd);
+    }
+    
+    @Override
+    public void postEdit(SaveData sd) {
+        setAmounts(sd);
+    }
+    
+    @Override
+    public void postRemove(SaveData sd) {
+        setAmounts(sd);
+    }
+
+    private void setAmounts(SaveData sd) {
+        for (Account a : sd.getAccounts())
+            a.setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
     }
     
     

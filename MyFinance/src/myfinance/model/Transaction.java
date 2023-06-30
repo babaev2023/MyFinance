@@ -3,6 +3,7 @@ package myfinance.model;
 
 import java.util.Date;
 import myfinance.exception.ModelException;
+import myfinance.saveload.SaveData;
 
 /**
  *
@@ -88,5 +89,25 @@ public class Transaction extends Common{
         return "Transaction{" + "account=" + account + ", article=" + article + ", amount=" + amount + ", notice=" + notice + ", date=" + date + '}';
     }
     
+    
+     @Override
+    public void postAdd(SaveData sd) {
+        setAmounts(sd);
+    }
+    
+    @Override
+    public void postEdit(SaveData sd) {
+        setAmounts(sd);
+    }
+    
+    @Override
+    public void postRemove(SaveData sd) {
+        setAmounts(sd);
+    }
+
+    private void setAmounts(SaveData sd) {
+        for (Account a : sd.getAccounts())
+            a.setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
+    }
     
 }

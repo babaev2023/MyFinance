@@ -3,6 +3,7 @@ package myfinance.model;
 
 import java.util.Objects;
 import myfinance.exception.ModelException;
+import myfinance.saveload.SaveData;
 
 /**
  *
@@ -105,5 +106,38 @@ public class Currency extends Common{
          return rate/ currency.rate;
      }
     
+    @Override
+    public void postAdd(SaveData sd) {
+        clearBase(sd);
+    }
     
+    @Override
+    public void postEdit(SaveData sd) {
+        clearBase(sd);
+        for (Currency c : sd.getCurrencies()) {
+            for (Account a : sd.getAccounts()) {
+                if (a.getCurrency().equals(c)) a.setCurrency(c);
+            }
+            for (Transaction t : sd.getTransactions())
+                if (t.getAccount().getCurrency().equals(c)) t.getAccount().setCurrency(c);
+            for (Transfer t : sd.getTransfers()) {
+                if (t.getFromAccount().getCurrency().equals(c)) t.getFromAccount().setCurrency(c);
+                if (t.getToAccount().getCurrency().equals(c)) t.getToAccount().setCurrency(c);
+            }
+        }
+        
+    }
+
+    private void clearBase(SaveData sd) {
+        if (base) {
+            rate = 1;
+            Currency old = (Currency) sd.getOldCommon();
+            for (Currency c : sd.getCurrencies()) {
+                if (!this.equals(c)) {
+                    c.setBase(false);
+                    if (old != null) c.setRate(c.rate / old.rate);
+                }
+            }
+        }
+    }
 }

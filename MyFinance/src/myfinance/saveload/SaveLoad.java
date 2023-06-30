@@ -32,7 +32,7 @@ public class SaveLoad {
         
  }
     
-    public void save(SaveData sd) {
+    public static void save(SaveData sd) {
         try {
             JAXBContext context = JAXBContext.newInstance(Wrapper.class);
             Marshaller m = context.createMarshaller();
