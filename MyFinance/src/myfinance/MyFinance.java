@@ -8,10 +8,13 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.io.IOException;
+import static java.lang.Character.FORMAT;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import myfinance.settings.Format;
 import myfinance.settings.Settings;
 import myfinance.settings.Text;
 
@@ -25,6 +28,7 @@ public class MyFinance {
     public static void main(String[] args) {
         init();
         //Проверяем что работает
+        System.out.println(Format.dateMonth(new Date()));
         System.out.println(Text.get("PROGRAMM_NAME"));
         System.out.println(Arrays.toString(Text.getMonths()));
     }

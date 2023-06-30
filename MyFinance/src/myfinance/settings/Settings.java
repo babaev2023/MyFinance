@@ -15,7 +15,7 @@ import org.ini4j.Wini;
  *
  * @author Stepan Babaev
  */
-public class Settings {
+final public class Settings {
     
     public static final File FONT_ACARISANS_ITALIC = new File("fonts/AcariSans-Italic.ttf");
     public static final File SAVE_DIR = new File("saves/");
