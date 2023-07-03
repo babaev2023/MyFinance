@@ -15,17 +15,29 @@ final public class Style {
     
     public static final Color COLOR_BUTTON_BG_NORMAL = new Color(240,240,240);
     public static final Color COLOR_BUTTON_BG_HOVER = Color.GREEN;
+    public static final Color COLOR_LEFTPANEL_BALANCE = Color.WHITE;
+    public static final Color COLOR_EXP = new Color(200, 0, 0);
+    public static final Color COLOR_INCOME = new Color(0, 100, 0);
+    public static final Color COLOR_ON = Color.BLACK;
+    public static final Color COLOR_OFF = new Color(170, 170, 170);
     
     public static final Font FONT_BUTTON_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
     public static final Font FONT_MAIN_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
     public static final Font FONT_MAIN_BUTTON = new Font("AcariSans-Italic", Font.BOLD, 16);
     public static final Font FONT_DIALOG_LABEL = new Font("AcariSans-Italic", Font.BOLD, 16);
+    public static final Font FONT_LABEL_HEADER = new Font("AcariSans-Italic", Font.BOLD, 16);
+    public static final Font FONT_LABEL_LEFT_PANEL_CURRENCY = new Font("AcariSans-Italic", Font.BOLD, 16);
+    public static final Font FONT_LABEL_LEFT_PANEL_AMOUNT = new Font("AcariSans-Italic", Font.PLAIN, 16);
+    public static final Font FONT_TABLE_HEADER = new Font("AcariSans-Italic", Font.BOLD, 16);
+    public static final Font FONT_TABLE = new Font("AcariSans-Italic", Font.PLAIN, 16);
+    public static final Font FONT_BUTTON_FILTER = new Font("AcariSans-Italic", Font.BOLD, 14);
     
     
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10,10,10,10);
     public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(5, 5, 5, 5);
     public static final EmptyBorder BORDER_FUNCTIONS_TOOLBAR = new EmptyBorder(5, 5, 5, 5);
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(10, 10, 10, 10);
+    public static final EmptyBorder BORDER_LEFT_PANEL = new EmptyBorder(0, 10, 10, 10);
     
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 25);
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);
@@ -34,9 +46,9 @@ final public class Style {
     public static final Dimension DIMENSION_CHART = new Dimension(868, 550);
     
     public static final int PADDING_DIALOG = 10;
-    public static final int PADDING_BALANCE = 3;
-    public static final int PADDING_PANEL = 3;
-    public static final int PADDING_PANEL_BIG = 20;
+    public static final int PADDING_BALANCE = 5;
+    public static final int PADDING_PANEL = 5;
+    public static final int PADDING_PANEL_BIG = 10;
     public static final int PADDING_PANEL_EMPTY = 5;
     public static final int TABLE_ADD_ROW_HEIGHT = 18;
     public static final int WIDTH_FILTER_BUTTON = 200;

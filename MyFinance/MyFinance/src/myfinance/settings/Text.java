@@ -158,6 +158,9 @@ final public class Text {
         data.put("LABEL_RATE", "Курс:");
         data.put("LABEL_ON", "Включено:");
         data.put("LABEL_BASE", "Базовая валюта:");
+        
+        data.put("BALANCE_CURRENCIES", "Текущий баланс:");
+        data.put("BALANCE", "Итоговый баланс:");
     
     
     

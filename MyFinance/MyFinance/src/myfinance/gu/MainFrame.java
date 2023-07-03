@@ -11,6 +11,7 @@ import myfinance.gu.dialog.AccountAddEditDialog;
 import myfinance.gu.dialog.ConfirmDialog;
 import myfinance.gu.dialog.ErrorDialog;
 import myfinance.gu.menu.MainMenu;
+import myfinance.gu.panel.LeftPanel;
 import myfinance.gu.toolbar.FunctionsToolBar;
 import myfinance.gu.toolbar.MainToolBar;
 import myfinance.settings.Style;
@@ -26,6 +27,7 @@ public class MainFrame extends JFrame implements Refresh {
     private final GridBagConstraints constraints;
     private final MainMenu mb;
     private final MainToolBar tb;
+    private final LeftPanel leftPanel;
     
     public MainFrame() {
         super(Text.get("PROGRAMM_NAME"));
@@ -75,6 +77,9 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.NORTH;
         
+        leftPanel = new LeftPanel(this);
+        add(leftPanel,constraints);
+        
         //add(new FunctionsToolBar(),constraints); //Test ToolBar
         
         //Правая панель
@@ -93,7 +98,12 @@ public class MainFrame extends JFrame implements Refresh {
     public void refresh() {
         SwingUtilities.updateComponentTreeUI(this);
         mb.refresh();
+        leftPanel.refresh();
         pack();
+    }
+
+    public MainMenu getMenu() {
+       return mb;
     }
     
 }
