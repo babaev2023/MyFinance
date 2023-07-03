@@ -6,6 +6,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import myfinance.gu.dialog.AboutDialog;
+import myfinance.gu.dialog.ConfirmDialog;
+import myfinance.gu.dialog.ErrorDialog;
 import myfinance.gu.menu.MainMenu;
 import myfinance.gu.toolbar.FunctionsToolBar;
 import myfinance.gu.toolbar.MainToolBar;
@@ -25,6 +28,18 @@ public class MainFrame extends JFrame implements Refresh {
     
     public MainFrame() {
         super(Text.get("PROGRAMM_NAME"));
+        
+        
+        //new AboutDialog().setVisible(true); //Тестируем окно "О программе"
+        
+        //ErrorDialog.show(this, "TEST ERROR");
+       // ConfirmDialog.show(this, "Вы уверены", "Тест подтверждения");
+        
+        //Test MainFileChooser
+        //MainFileChooser fc = new MainFileChooser(this);
+        //System.out.println(fc.save());
+        
+        
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //закрытие программы при выходе 

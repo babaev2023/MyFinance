@@ -2,6 +2,7 @@
 package myfinance.settings;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.border.EmptyBorder;
@@ -18,11 +19,27 @@ final public class Style {
     public static final Font FONT_BUTTON_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
     public static final Font FONT_MAIN_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
     public static final Font FONT_MAIN_BUTTON = new Font("AcariSans-Italic", Font.BOLD, 16);
+    public static final Font FONT_DIALOG_LABEL = new Font("AcariSans-Italic", Font.BOLD, 16);
     
     
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10,10,10,10);
     public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(5, 5, 5, 5);
     public static final EmptyBorder BORDER_FUNCTIONS_TOOLBAR = new EmptyBorder(5, 5, 5, 5);
+    public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(10, 10, 10, 10);
+    
+    public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 25);
+    public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);
+    public static final Dimension DIMENSION_PADDING_BALANCE = new Dimension(10, 0);
+    public static final Dimension DIMENSION_TABLE_SHOW_SIZE = new Dimension(850, 450);
+    public static final Dimension DIMENSION_CHART = new Dimension(868, 550);
+    
+    public static final int PADDING_DIALOG = 10;
+    public static final int PADDING_BALANCE = 3;
+    public static final int PADDING_PANEL = 3;
+    public static final int PADDING_PANEL_BIG = 20;
+    public static final int PADDING_PANEL_EMPTY = 5;
+    public static final int TABLE_ADD_ROW_HEIGHT = 18;
+    public static final int WIDTH_FILTER_BUTTON = 200;
     
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/main.png");
     public static final ImageIcon ICON_TOLBAR_OVERVIEW = new ImageIcon("images/overview.png");
@@ -76,6 +93,36 @@ final public class Style {
     public static final ImageIcon ICON_DELETE = new ImageIcon("images/delete.png");
     
     public static final ImageIcon ICON_DATE = new ImageIcon("images/date.png");
+    
+    public static final ImageIcon ICON_ABOUT = new ImageIcon("images/menu_help_about.png");
+    
+    public static final ImageIcon ICON_OK = new ImageIcon("images/ok.png");
+    public static final ImageIcon ICON_CANCEL = new ImageIcon("images/cancel.png");
+    
+    public static final ImageIcon ICON_TITLE = new ImageIcon("images/title.png");
+    public static final ImageIcon ICON_CURRENCY = new ImageIcon("images/currency.png");
+    public static final ImageIcon ICON_AMOUNT = new ImageIcon("images/amount.png");
+    public static final ImageIcon ICON_ACCOUNT = new ImageIcon("images/account.png");
+    public static final ImageIcon ICON_ARTICLE = new ImageIcon("images/article.png");
+    public static final ImageIcon ICON_NOTICE = new ImageIcon("images/notice.png");
+    public static final ImageIcon ICON_CODE = new ImageIcon("images/code.png");
+    public static final ImageIcon ICON_RATE = new ImageIcon("images/rate.png");
+    public static final ImageIcon ICON_ON = new ImageIcon("images/on.png");
+    public static final ImageIcon ICON_BASE = new ImageIcon("images/base.png");
+    
+    public static final ImageIcon ICON_LEFT_PANEL_BALANCE_CURRENCIES = new ImageIcon("images/balance_currencies.png");
+    public static final ImageIcon ICON_LEFT_PANEL_BALANCE = new ImageIcon("images/balance.png");
+    
+    public static final ImageIcon ICON_LEFT = new ImageIcon("images/left.png");
+    public static final ImageIcon ICON_RIGHT = new ImageIcon("images/right.png");
+    
+    public static final ImageIcon ICON_PANEL_OVERVIEW = new ImageIcon("images/overview_panel.png");
+    public static final ImageIcon ICON_PANEL_TRANSACTIONS = new ImageIcon("images/transactions_panel.png");
+    public static final ImageIcon ICON_PANEL_ACCOUNTS = new ImageIcon("images/accounts_panel.png");
+    public static final ImageIcon ICON_PANEL_ARTICLES = new ImageIcon("images/articles_panel.png");
+    public static final ImageIcon ICON_PANEL_TRANSFERS = new ImageIcon("images/transfers_panel.png");
+    public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");
+    public static final ImageIcon ICON_PANEL_STATISTICS = new ImageIcon("images/statistics_panel.png");
     
     
     

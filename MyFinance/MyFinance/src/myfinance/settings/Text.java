@@ -4,6 +4,7 @@
  */
 package myfinance.settings;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 /**
@@ -58,7 +59,7 @@ final public class Text {
         data.put("NOVEMBER", "Ноябрь");
         data.put("DECEMBER", "Декабрь");
         
-        
+        data.put("ERROR", "Ошибка");
         data.put("ERROR_TITTLE_EMPTY", "Вы не ввели название");
         data.put("ERROR_IS_EXISTS", "Такая запись уже существует");
         data.put("ERROR_DATE_FORMAT", "Некорректный формат даты");
@@ -116,7 +117,34 @@ final public class Text {
         data.put("TODAY", "Сегодня");
         
         
-    }
+        data.put("FC_HOME", "Возврат");
+        data.put("FC_OPEN", "Открыть");
+        data.put("FC_SAVE", "Сохранить");
+        data.put("FC_CANCEL", "Отмена");
+        data.put("FC_LOOK", "Папка:");
+        data.put("FC_NAME_FILE", "Имя файла:");
+        data.put("FC_TYPE_FILE", "Тип файла:");
+        data.put("FC_UP", "Вверх");
+        data.put("FC_NEW_DIRECTORY", "Новая папка");
+        data.put("FC_LIST", "Список");
+        data.put("FC_TABLE", "Таблица");
+        data.put("FC_NAME", "Имя");
+        data.put("FC_SIZE", "Размер");
+        data.put("FC_TYPE", "Тип");
+        data.put("FC_DATE", "Дата");
+        data.put("FC_ATTR", "Атрибуты");
+        data.put("FC_ALL_FILTER", "Все файлы");
+        
+        data.put("DIALOG_ABOUT_TITLE", "О программе");
+            data.put("ABOUT", "<body style='font-size: 120%; text-align: center; width: 350px;'>"
+                    + "<h1>Домашняя бухгалтерия MyFinance</h1><p><img src='file:images/main.png' /></p>"
+                    + "<p>Программа создана на языке JAVA"
+                    + "<br /><a style='font-weight: bold;' href='https://github.com/babaev2023/MyFinance'>Исходники</a></p>"
+                    + "<p> " + Calendar.getInstance().get(Calendar.YEAR) + " </p></body>");
+        }
+        
+        
+    
     
     
 }
