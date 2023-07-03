@@ -108,6 +108,14 @@ final public class Text {
         data.put("TOOLBAR_STATISTICS", "Статистика");
         
         
+        data.put("ADD", "Добавить");
+        data.put("EDIT", "Править");
+        data.put("DELETE", "Удалить");
+        data.put("CANCEL", "Отмена");
+        
+        data.put("TODAY", "Сегодня");
+        
+        
     }
     
     

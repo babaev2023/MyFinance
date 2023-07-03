@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import myfinance.gu.menu.MainMenu;
+import myfinance.gu.toolbar.FunctionsToolBar;
 import myfinance.gu.toolbar.MainToolBar;
 import myfinance.settings.Style;
 import myfinance.settings.Text;
@@ -52,7 +53,11 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.NORTH;
         
+        //add(new FunctionsToolBar(),constraints); //Test ToolBar
+        
         //Правая панель
+        
+        //add(new MainDatePicker().getDatePicker(),constraints); //Test DatePicker
         
         pack();
         setLocationRelativeTo(null);
