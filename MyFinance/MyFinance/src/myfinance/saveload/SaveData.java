@@ -3,6 +3,7 @@ package myfinance.saveload;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import myfinance.exception.ModelException;
 import myfinance.model.*;
@@ -176,6 +177,21 @@ public class SaveData {
         c.postRemove(this);
         saved = false;
     }
+    
+    @Override
+    public String toString() {
+        return "SaveData{" + "articles=" + articles + ", accounts=" + accounts + ", currencies=" + currencies + ", transactions=" + transactions + ", transfers=" + transfers + '}';
+    }
+    
+    
+    public void updateCurrencies() throws Exception {
+        HashMap<String, Double> rates = RateCurrency.getRates(getBaseCurrency());
+        for (Currency c : currencies)
+            c.setRate(rates.get(c.getCode()));
+        for (Account a : accounts)
+            a.getCurrency().setRate(rates.get(a.getCurrency().getCode()));
+        saved = false;
+    }
       
       private List getRef(Common c) {
         if (c instanceof Account) return accounts;
@@ -186,10 +202,7 @@ public class SaveData {
         return null;
     }
 
-    @Override
-    public String toString() {
-        return "SaveData{" + "articles=" + articles + ", accounts=" + accounts + ", currencies=" + currencies + ", transactions=" + transactions + ", transfers=" + transfers + '}';
-    }
+    
       
       
     

@@ -29,10 +29,17 @@ import javax.xml.bind.Unmarshaller;
 public class MyFinance {
 
     
-    public static void main(String[] args) throws ModelException {
+    public static void main(String[] args) throws ModelException, Exception {
         init();
+        SaveData sd = SaveData.getInstance();
+        //sd.updateCurrencies();
+        //sd.save();
+        System.out.println(sd.getCurrencies());
+
+
         //Проверяем что работает
-        testModel();
+                
+        //testModel();
         
         //System.out.println(Format.dateMonth(new Date()));
         //System.out.println(Text.get("PROGRAMM_NAME"));
