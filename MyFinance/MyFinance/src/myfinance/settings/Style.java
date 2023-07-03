@@ -17,9 +17,11 @@ final public class Style {
     
     public static final Font FONT_BUTTON_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
     public static final Font FONT_MAIN_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
+    public static final Font FONT_MAIN_BUTTON = new Font("AcariSans-Italic", Font.BOLD, 16);
     
     
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10,10,10,10);
+    public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(5, 5, 5, 5);
     
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/main.png");
     public static final ImageIcon ICON_TOLBAR_OVERVIEW = new ImageIcon("images/overview.png");
@@ -56,6 +58,16 @@ final public class Style {
     public static final ImageIcon ICON_MENU_VIEW_STATISTICS = new ImageIcon("images/menu_view_statistics.png");
     
     public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_help_about.png");
+    
+    
+    
+    public static final ImageIcon ICON_TOOLBAR_OVERVIEW = new ImageIcon("images/overview.png");
+    public static final ImageIcon ICON_TOOLBAR_ACCOUNTS = new ImageIcon("images/accounts.png");
+    public static final ImageIcon ICON_TOOLBAR_ARTICLES = new ImageIcon("images/articles.png");
+    public static final ImageIcon ICON_TOOLBAR_TRANSACTIONS = new ImageIcon("images/transactions.png");
+    public static final ImageIcon ICON_TOOLBAR_TRANSFERS = new ImageIcon("images/transfers.png");
+    public static final ImageIcon ICON_TOOLBAR_CURRENCIES = new ImageIcon("images/currencies.png");
+    public static final ImageIcon ICON_TOOLBAR_STATISTICS = new ImageIcon("images/statistics.png");
     
     
     

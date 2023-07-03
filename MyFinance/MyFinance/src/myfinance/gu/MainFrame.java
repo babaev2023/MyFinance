@@ -1,11 +1,13 @@
 //GUI Swing
 package myfinance.gu;
 
+import static java.awt.AWTEventMulticaster.add;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import myfinance.gu.menu.MainMenu;
+import myfinance.gu.toolbar.MainToolBar;
 import myfinance.settings.Style;
 import myfinance.settings.Text;
 
@@ -18,6 +20,7 @@ public class MainFrame extends JFrame implements Refresh {
     
     private final GridBagConstraints constraints;
     private final MainMenu mb;
+    private final MainToolBar tb;
     
     public MainFrame() {
         super(Text.get("PROGRAMM_NAME"));
@@ -38,7 +41,11 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridy = 0;
         constraints.gridwidth = 2;
         
+        tb = new MainToolBar();
+        add(tb,constraints);
         
+        
+        //add(new MainButton("TEST Button", null, "START TEST"));
         //Левая панель
         
         constraints.gridy = 1;
@@ -49,6 +56,8 @@ public class MainFrame extends JFrame implements Refresh {
         
         pack();
         setLocationRelativeTo(null);
+        
+        
         
     }
     
