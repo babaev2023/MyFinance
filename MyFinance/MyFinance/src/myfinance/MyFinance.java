@@ -21,6 +21,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import myfinance.gu.MainFrame;
 
 /**
  *
@@ -29,17 +30,27 @@ import javax.xml.bind.Unmarshaller;
 public class MyFinance {
 
     
-    public static void main(String[] args) throws ModelException, Exception {
+    public static void main(String[] args) throws ModelException {
         init();
+        MainFrame frame = new MainFrame();
+        frame.setVisible(true);
+        
+        
+        
         SaveData sd = SaveData.getInstance();
         //sd.updateCurrencies();
         //sd.save();
-        System.out.println(sd.getCurrencies());
+        System.out.println(sd);
 
 
         //Проверяем что работает
                 
         //testModel();
+        
+        //SaveData sd = SaveData.getInstance();
+        //sd.updateCurrencies();
+        //sd.save();
+        //System.out.println(sd.getCurrencies());
         
         //System.out.println(Format.dateMonth(new Date()));
         //System.out.println(Text.get("PROGRAMM_NAME"));
