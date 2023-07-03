@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import myfinance.gu.dialog.AboutDialog;
+import myfinance.gu.dialog.AccountAddEditDialog;
 import myfinance.gu.dialog.ConfirmDialog;
 import myfinance.gu.dialog.ErrorDialog;
 import myfinance.gu.menu.MainMenu;
@@ -29,6 +30,12 @@ public class MainFrame extends JFrame implements Refresh {
     public MainFrame() {
         super(Text.get("PROGRAMM_NAME"));
         
+        //new CurrencyAddEditDialog(this).showDialog(); //Тестируем CurrencyAddEditDialog
+        //new TransferAddEditDialog(this).showDialog(); //Тестируем TransferAddEditDialog
+        //new TransactionAddEditDialog(this).showDialog(); //Тестируем TransactionAddEditDialog
+        //new ArticleAddEditDialog(this).showDialog(); //Тестируем ArticleAddEditDialog
+        
+        //new AccountAddEditDialog(this).showDialog(); //Тестируем AccountAddEditDialog
         
         //new AboutDialog().setVisible(true); //Тестируем окно "О программе"
         
