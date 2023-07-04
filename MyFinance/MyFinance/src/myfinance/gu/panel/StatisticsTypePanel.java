@@ -3,6 +3,7 @@ package myfinance.gu.panel;
 
 import myfinance.gu.MainButton;
 import myfinance.gu.MainFrame;
+import myfinance.gu.handler.ChartHandler;
 import myfinance.settings.HandlerCode;
 import myfinance.settings.Text;
 
@@ -22,7 +23,7 @@ public class StatisticsTypePanel extends AbstractPanel{
 
     @Override
     protected void init() {
-        MainButton type = new MainButton(title, null, HandlerCode.TYPE);
+        MainButton type = new MainButton(title, new ChartHandler(frame), HandlerCode.TYPE);
         add(type);
     }
     

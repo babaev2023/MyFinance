@@ -6,11 +6,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
 import myfinance.gu.dialog.AboutDialog;
 import myfinance.gu.dialog.AccountAddEditDialog;
 import myfinance.gu.dialog.ConfirmDialog;
 import myfinance.gu.dialog.ErrorDialog;
 import myfinance.gu.handler.MainToolBarHandler;
+import myfinance.gu.handler.MainWindowHandler;
 import myfinance.gu.menu.MainMenu;
 import myfinance.gu.panel.AccountPanel;
 import myfinance.gu.panel.ArticlePanel;
@@ -61,7 +63,8 @@ public final class MainFrame extends JFrame implements Refresh {
         
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //закрытие программы при выходе 
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //закрытие программы при выходе 
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE); //закрытие программы при выходе 
         
         mb = new MainMenu(this);
        setJMenuBar(mb);
@@ -101,6 +104,8 @@ public final class MainFrame extends JFrame implements Refresh {
         
         pack();
         setLocationRelativeTo(null);
+        
+        addWindowListener(new MainWindowHandler());
         
         
         

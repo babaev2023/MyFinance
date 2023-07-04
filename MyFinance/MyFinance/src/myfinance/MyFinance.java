@@ -37,10 +37,10 @@ public class MyFinance {
         
         
         
-        SaveData sd = SaveData.getInstance();
+        //SaveData sd = SaveData.getInstance();
         //sd.updateCurrencies();
         //sd.save();
-        System.out.println(sd);
+        //System.out.println(sd);
 
 
         //Проверяем что работает

@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import myfinance.exception.ModelException;
 import myfinance.gu.MainButton;
 import myfinance.gu.MainFrame;
+import myfinance.gu.handler.AddEditDialogHandler;
 import myfinance.model.Common;
 import myfinance.settings.HandlerCode;
 import myfinance.settings.Style;
@@ -35,13 +36,17 @@ abstract public class AddEditDialog extends JDialog{
     
     
     
+    private final MainFrame frame;
     protected LinkedHashMap<String, JComponent> components = new LinkedHashMap();
     protected LinkedHashMap<String, ImageIcon> icons = new LinkedHashMap();
     protected LinkedHashMap<String, Object> values = new LinkedHashMap();
     protected Common c;
     
+    
     public AddEditDialog(MainFrame frame) {
         super(frame, Text.get("ADD"), true);
+        this.frame = frame;
+        addWindowListener(new AddEditDialogHandler(frame, this));
         setResizable(false);
     }
 
@@ -108,7 +113,7 @@ abstract public class AddEditDialog extends JDialog{
             else if (component instanceof JDatePickerImpl) {
                 if (values.containsKey(key)) ((UtilDateModel) ((JDatePickerImpl) component).getModel()).setValue((Date) values.get(key));
             }
-           // component.addKeyListener(new AddEditDialogHandler(frame, this));
+            component.addKeyListener(new AddEditDialogHandler(frame, this));
             component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
             add(label);
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
@@ -116,13 +121,13 @@ abstract public class AddEditDialog extends JDialog{
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
         }
     
-        MainButton ok = new MainButton(Text.get("ADD"), Style.ICON_OK,null,  HandlerCode.ADD);
+        MainButton ok = new MainButton(Text.get("ADD"), Style.ICON_OK,new AddEditDialogHandler(frame, this),  HandlerCode.ADD);
         if (!isAdd()) {
             ok.setActionCommand(HandlerCode.EDIT);
             ok.setText(Text.get("EDIT"));
         }
         
-        MainButton cancel = new MainButton(Text.get("CANCEL"), Style.ICON_CANCEL, null, HandlerCode.CANCEL);
+        MainButton cancel = new MainButton(Text.get("CANCEL"), Style.ICON_CANCEL, new AddEditDialogHandler(frame, this), HandlerCode.CANCEL);
         
         JPanel panelButtons = new JPanel();
         panelButtons.setLayout(new BorderLayout());

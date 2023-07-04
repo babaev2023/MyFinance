@@ -4,6 +4,7 @@ package myfinance.gu.menu;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import myfinance.gu.Refresh;
+import myfinance.gu.handler.FunctionsHandler;
 import myfinance.settings.HandlerCode;
 import myfinance.settings.Style;
 import myfinance.settings.Text;
@@ -13,12 +14,14 @@ import myfinance.settings.Text;
  * @author Stepan Babaev
  */
 public class TablePopupMenu extends JPopupMenu implements Refresh {
+
+    private final FunctionsHandler handler;
     
    
     
-    public TablePopupMenu() {
+    public TablePopupMenu(FunctionsHandler handler) {
         super();
-        
+        this.handler = handler;
         init();
     }
     
@@ -34,7 +37,9 @@ public class TablePopupMenu extends JPopupMenu implements Refresh {
         editItem.setActionCommand(HandlerCode.EDIT);
         deleteItem.setActionCommand(HandlerCode.DELETE);
         
-        //
+        editItem.addActionListener(handler);
+        deleteItem.addActionListener(handler);
+        
         
         editItem.setIcon(Style.ICON_MENU_POPUP_EDIT);
         deleteItem.setIcon(Style.ICON_MENU_POPUP_DELETE);
