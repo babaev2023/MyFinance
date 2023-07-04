@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
+import myfinance.gu.handler.FunctionsHandler;
 import myfinance.gu.table.model.TransferTableModel;
 import myfinance.gu.table.renderer.MainTableCellRenderer;
 import myfinance.settings.Style;
@@ -19,8 +20,8 @@ public class TransferTableData extends TableData{
     private static final String[] columns = new String[]{"DATE", "FROM_ACCOUNT", "TO_ACCOUNT", "FROM_AMOUNT", "TO_AMOUNT", "NOTICE"};
     private static final ImageIcon[] icons = new ImageIcon[]{Style.ICON_DATE, Style.ICON_ACCOUNT, Style.ICON_ACCOUNT, Style.ICON_AMOUNT, Style.ICON_AMOUNT, Style.ICON_NOTICE};
     
-    public TransferTableData() {
-        super(new TransferTableModel(columns),  columns, icons);
+     public TransferTableData(FunctionsHandler handler) {
+        super(new TransferTableModel(columns), handler, columns, icons);
         init();
     }
     

@@ -12,7 +12,10 @@ import myfinance.gu.EnableEditDelete;
 import myfinance.gu.MainFrame;
 import myfinance.gu.Refresh;
 import myfinance.gu.handler.Handler;
+import myfinance.gu.handler.MenuEditHandler;
 import myfinance.gu.handler.MenuFileHandler;
+import myfinance.gu.handler.MenuHelpHandler;
+import myfinance.gu.handler.MenuViewHandler;
 import myfinance.settings.HandlerCode;
 import myfinance.settings.Settings;
 import myfinance.settings.Style;
@@ -56,9 +59,9 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete{
         add(help);
         
         MenuFileHandler fileHandler = new MenuFileHandler(frame);
-        MenuFileHandler editHandler = new MenuFileHandler(frame);
-        MenuFileHandler viewHandler = new MenuFileHandler(frame);
-        MenuFileHandler helpHandler = new MenuFileHandler(frame);
+        MenuEditHandler editHandler = new MenuEditHandler(frame);
+        MenuViewHandler viewHandler = new MenuViewHandler(frame);
+        MenuHelpHandler helpHandler = new MenuHelpHandler(frame);
         
         
         

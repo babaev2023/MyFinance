@@ -1,6 +1,7 @@
 
 package myfinance.gu.toolbar;
 
+import myfinance.gu.handler.MainToolBarHandler;
 import myfinance.settings.HandlerCode;
 import myfinance.settings.Style;
 import myfinance.settings.Text;
@@ -11,11 +12,9 @@ import myfinance.settings.Text;
  */
 public final class MainToolBar extends AbstractToolBar{
     
-    public MainToolBar() {
-        super();
-        setBorder(Style.BORDER_MAIN_TOOLBAR);
+    public MainToolBar(MainToolBarHandler handler) {
+        super(Style.BORDER_MAIN_TOOLBAR, handler);
         init();
-        
     }
 
     @Override

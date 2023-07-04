@@ -3,6 +3,7 @@ package myfinance.gu.toolbar;
 
 import myfinance.gu.EnableEditDelete;
 import myfinance.gu.MainButton;
+import myfinance.gu.handler.Handler;
 import myfinance.settings.HandlerCode;
 import myfinance.settings.Style;
 import myfinance.settings.Text;
@@ -16,9 +17,8 @@ public final class FunctionsToolBar extends AbstractToolBar implements EnableEdi
     private MainButton editButton;
     private MainButton deleteButton;
     
-    public FunctionsToolBar() {
-        super();
-        setBorder(Style.BORDER_FUNCTIONS_TOOLBAR);
+   public FunctionsToolBar(Handler handler) {
+        super(Style.BORDER_FUNCTIONS_TOOLBAR, handler);
         init();
     }
     

@@ -7,6 +7,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import myfinance.gu.Refresh;
+import myfinance.gu.handler.FunctionsHandler;
 import myfinance.gu.menu.TablePopupMenu;
 import myfinance.gu.table.model.MainTableModel;
 import myfinance.gu.table.renderer.MainTableCellRenderer;
@@ -21,14 +22,14 @@ import myfinance.settings.Text;
 abstract public class TableData extends JTable implements Refresh{
     
     
-
+    private final FunctionsHandler handler;
     private final TablePopupMenu popup;
     private final String[] columns;
     private final ImageIcon[] icons;
     
-    public TableData(MainTableModel model, String[] columns, ImageIcon[] icons) {
+    public TableData(MainTableModel model,FunctionsHandler handler , String[] columns, ImageIcon[] icons) {
         super(model);
-        
+        this.handler = handler;
         this.popup = new TablePopupMenu();
         this.columns = columns;
         this.icons = icons;
@@ -40,6 +41,10 @@ abstract public class TableData extends JTable implements Refresh{
         setAutoCreateRowSorter(true); //Сортировка
         setPreferredScrollableViewportSize(Style.DIMENSION_TABLE_SHOW_SIZE); //Фиксируем размер таблицы
         setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //Одиночное выделение
+        
+        addMouseListener(handler);
+        addKeyListener(handler);
+        
         
         //Добавили иконку в строках
         for (int i = 0; i < columns.length; i++) {
@@ -56,17 +61,26 @@ abstract public class TableData extends JTable implements Refresh{
     }
     
     //Чтобы popup работал не на всей таблице -
+    //@Override
+    //public JPopupMenu getComponentPopupMenu() {
+    //    Point p = getMousePosition();
+    //    if (p != null) {
+    //        int row = rowAtPoint(p);
+    //        if (p != null && row !=-1) setRowSelectionInterval(row, row);
+    //    
+    //    }
+    //    return super.getComponentPopupMenu();
+    //}
+    
     @Override
     public JPopupMenu getComponentPopupMenu() {
         Point p = getMousePosition();
         if (p != null) {
             int row = rowAtPoint(p);
-            if (p != null && row !=-1) setRowSelectionInterval(row, row);
-        
+            if (isRowSelected(row)) return super.getComponentPopupMenu();
+            else return null;
         }
         return super.getComponentPopupMenu();
-           
-        
     }
     
     @Override
@@ -85,6 +99,10 @@ abstract public class TableData extends JTable implements Refresh{
     
     protected void init() {
         
+    }
+
+    public FunctionsHandler getFunctionHandler() {
+        return handler;
     }
 
         

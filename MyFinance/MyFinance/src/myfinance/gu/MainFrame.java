@@ -10,6 +10,7 @@ import myfinance.gu.dialog.AboutDialog;
 import myfinance.gu.dialog.AccountAddEditDialog;
 import myfinance.gu.dialog.ConfirmDialog;
 import myfinance.gu.dialog.ErrorDialog;
+import myfinance.gu.handler.MainToolBarHandler;
 import myfinance.gu.menu.MainMenu;
 import myfinance.gu.panel.AccountPanel;
 import myfinance.gu.panel.ArticlePanel;
@@ -29,7 +30,7 @@ import myfinance.settings.Text;
  *
  * @author Stepan Babaev 
  */
-public class MainFrame extends JFrame implements Refresh {
+public final class MainFrame extends JFrame implements Refresh {
     
     
     private final GridBagConstraints constraints;
@@ -75,7 +76,7 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridy = 0;
         constraints.gridwidth = 2;
         
-        tb = new MainToolBar();
+        tb = new MainToolBar(new MainToolBarHandler(this));
         add(tb,constraints);
         
         
@@ -96,7 +97,7 @@ public class MainFrame extends JFrame implements Refresh {
         //add(new MainDatePicker().getDatePicker(),constraints); //Test DatePicker
         
         //setRightPanel(new ArticlePanel(this)); //Test ArticlePanel
-        setRightPanel(new TransactionPanel(this)); 
+        setRightPanel(new OverviewPanel(this)); 
         
         pack();
         setLocationRelativeTo(null);
@@ -119,7 +120,7 @@ public class MainFrame extends JFrame implements Refresh {
        return mb;
     }
 
-    private void setRightPanel(RightPanel panel) {
+    public void setRightPanel(RightPanel panel) {
         if (rightPanel !=null) remove(rightPanel);
         constraints.gridy =1;
         constraints.gridx =1;
@@ -128,6 +129,10 @@ public class MainFrame extends JFrame implements Refresh {
         add(rightPanel,constraints);
         pack();
         
+    }
+    
+    public RightPanel getRightPanel() {
+        return rightPanel;
     }
     
 }

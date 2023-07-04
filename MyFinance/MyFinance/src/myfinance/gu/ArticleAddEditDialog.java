@@ -3,7 +3,7 @@ package myfinance.gu;
 
 import javax.swing.JTextField;
 import myfinance.exception.ModelException;
-import myfinance.gu.toolbar.AddEditDialog;
+import myfinance.gu.dialog.AddEditDialog;
 import myfinance.model.Article;
 import myfinance.model.Common;
 import myfinance.settings.Style;

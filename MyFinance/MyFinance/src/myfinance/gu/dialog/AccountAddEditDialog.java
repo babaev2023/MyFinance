@@ -4,7 +4,6 @@ package myfinance.gu.dialog;
 import javax.swing.JTextField;
 import myfinance.exception.ModelException;
 import myfinance.gu.MainFrame;
-import myfinance.gu.toolbar.AddEditDialog;
 import myfinance.model.Account;
 import myfinance.model.Common;
 import myfinance.model.Currency;

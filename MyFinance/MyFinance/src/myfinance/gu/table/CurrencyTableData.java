@@ -4,6 +4,7 @@ package myfinance.gu.table;
 import java.awt.Component;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
+import myfinance.gu.handler.FunctionsHandler;
 import myfinance.gu.table.model.CurrencyTableModel;
 import myfinance.gu.table.renderer.MainTableCellRenderer;
 import myfinance.model.Currency;
@@ -19,8 +20,8 @@ public class CurrencyTableData extends TableData{
     private static final String[] columns = new String[]{"TITLE", "CODE", "RATE", "ON", "BASE"};
     private static final ImageIcon[] icons = new ImageIcon[]{Style.ICON_TITLE, Style.ICON_CODE, Style.ICON_RATE, Style.ICON_ON, Style.ICON_BASE};
     
-    public CurrencyTableData() {
-        super(new CurrencyTableModel(columns),  columns, icons);
+    public CurrencyTableData(FunctionsHandler handler) {
+        super(new CurrencyTableModel(columns), handler, columns, icons);
         init();
     }
     
