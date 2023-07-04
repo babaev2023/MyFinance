@@ -24,11 +24,12 @@ public class Filter {
     
     
     public Filter() {
-        this(STEP_MONTH);
+        this(STEP_MONTH); //Вывод по умолчанию
     }
     
     public Filter(int step) {
         this.step = step;
+        setFromTo(new GregorianCalendar());
     }
     
     public int getStep() {
@@ -98,6 +99,7 @@ public class Filter {
                         calendar.get(Calendar.MONTH),
                         yearMonth.lengthOfMonth(),
                         23,59,59).getTime();
+                break;
                 
             
             case STEP_YEAR:

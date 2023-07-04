@@ -30,6 +30,12 @@ public class TransactionTableData extends TableData{
     }
     
     @Override
+    public void refresh() {
+        super.refresh();
+        init();
+    }
+    
+    @Override
     protected final void init() {
         getColumn(Text.get("AMOUNT")).setCellRenderer(new TableCellAmountRenderer());
     }
