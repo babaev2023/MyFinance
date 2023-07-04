@@ -4,6 +4,7 @@ package myfinance.settings;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.border.EmptyBorder;
 
@@ -19,7 +20,7 @@ final public class Style {
     public static final Color COLOR_EXP = new Color(200, 0, 0);
     public static final Color COLOR_INCOME = new Color(0, 155, 0);
     public static final Color COLOR_ON = Color.BLACK;
-    public static final Color COLOR_OFF = new Color(170, 170, 170);
+    public static final Color COLOR_OFF = new Color(150, 150, 150);
     
     public static final Font FONT_BUTTON_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
     public static final Font FONT_MAIN_TOOLBAR = new Font("AcariSans-Italic", Font.BOLD, 16);
@@ -136,6 +137,7 @@ final public class Style {
     public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/currencies_panel.png");
     public static final ImageIcon ICON_PANEL_STATISTICS = new ImageIcon("images/statistics_panel.png");
     
-    
+    public static final Icon ICON_MENU_POPUP_EDIT = new ImageIcon("images/menu_popup_edit.png");;
+    public static final Icon ICON_MENU_POPUP_DELETE = new ImageIcon("images/menu_popup_delete.png");;
     
 }

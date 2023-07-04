@@ -29,11 +29,11 @@ public class TransactionTableData extends TableData{
         init();
     }
     
-    @Override
-    public void refresh() {
-        super.refresh();
-        init();
-    }
+    //@Override
+    //public void refresh() {
+    //    super.refresh();
+     //   init();
+    //}
     
     @Override
     protected final void init() {

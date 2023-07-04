@@ -7,6 +7,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import myfinance.gu.Refresh;
+import myfinance.gu.menu.TablePopupMenu;
 import myfinance.gu.table.model.MainTableModel;
 import myfinance.gu.table.renderer.MainTableCellRenderer;
 import myfinance.gu.table.renderer.TableHeaderIconRenderer;
@@ -21,13 +22,14 @@ abstract public class TableData extends JTable implements Refresh{
     
     
 
-   
+    private final TablePopupMenu popup;
     private final String[] columns;
     private final ImageIcon[] icons;
     
     public TableData(MainTableModel model, String[] columns, ImageIcon[] icons) {
         super(model);
         
+        this.popup = new TablePopupMenu();
         this.columns = columns;
         this.icons = icons;
         
@@ -47,19 +49,21 @@ abstract public class TableData extends JTable implements Refresh{
         
         MainTableCellRenderer renderer = new MainTableCellRenderer();
         setDefaultRenderer(String.class, renderer);
+        //Добавили popup
+        setComponentPopupMenu(popup);
         
         
     }
     
+    //Чтобы popup работал не на всей таблице -
     @Override
     public JPopupMenu getComponentPopupMenu() {
         Point p = getMousePosition();
-        if (p != null) {
-            int row = rowAtPoint(p);
-            if (isRowSelected(row)) return super.getComponentPopupMenu();
-            else return null;
-        }
+        int row = rowAtPoint(p);
+        if (p != null && row !=-1) setRowSelectionInterval(row, row);
         return super.getComponentPopupMenu();
+           
+        
     }
     
     @Override

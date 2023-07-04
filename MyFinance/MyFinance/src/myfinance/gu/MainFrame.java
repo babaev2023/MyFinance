@@ -13,6 +13,7 @@ import myfinance.gu.dialog.ErrorDialog;
 import myfinance.gu.menu.MainMenu;
 import myfinance.gu.panel.AccountPanel;
 import myfinance.gu.panel.ArticlePanel;
+import myfinance.gu.panel.CurrencyPanel;
 import myfinance.gu.panel.LeftPanel;
 import myfinance.gu.panel.OverviewPanel;
 import myfinance.gu.panel.RightPanel;
@@ -94,7 +95,7 @@ public class MainFrame extends JFrame implements Refresh {
         //add(new MainDatePicker().getDatePicker(),constraints); //Test DatePicker
         
         //setRightPanel(new ArticlePanel(this)); //Test ArticlePanel
-        setRightPanel(new TransferPanel(this)); 
+        setRightPanel(new CurrencyPanel(this)); 
         
         pack();
         setLocationRelativeTo(null);
@@ -109,6 +110,7 @@ public class MainFrame extends JFrame implements Refresh {
         SwingUtilities.updateComponentTreeUI(this);
         mb.refresh();
         leftPanel.refresh();
+        rightPanel.refresh();
         pack();
     }
 
