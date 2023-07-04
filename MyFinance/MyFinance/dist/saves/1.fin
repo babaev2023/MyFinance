@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <accounts>
+        <currency>
+            <base>true</base>
+            <code>RUB</code>
+            <on>true</on>
+            <rate>1.0</rate>
+            <title>Рубли</title>
+        </currency>
+        <startAmount>0.0</startAmount>
+        <title>Альфа</title>
+    </accounts>
+    <currencies>
+        <base>true</base>
+        <code>RUB</code>
+        <on>true</on>
+        <rate>1.0</rate>
+        <title>Рубли</title>
+    </currencies>
+</data>
