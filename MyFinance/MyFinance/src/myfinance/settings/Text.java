@@ -145,6 +145,7 @@ final public class Text {
         data.put("LABEL_TITLE", "Название:");
         data.put("LABEL_CURRENCY", "Валюта:");
         data.put("LABEL_START_AMOUNT", "Начальный баланс:");
+        
         data.put("LABEL_DATE", "Дата:");
         data.put("LABEL_ACCOUNT", "Счет:");
         data.put("LABEL_ARTICLE", "Статья:");
@@ -161,6 +162,34 @@ final public class Text {
         
         data.put("BALANCE_CURRENCIES", "Текущий баланс:");
         data.put("BALANCE", "Итоговый баланс:");
+        
+        
+        data.put("LAST_TRANSACTIONS", "Последние транзакции");
+        data.put("ACCOUNTS", "Счета");
+        data.put("ARTICLES", "Статьи");
+        data.put("CURRENCIES", "Currencies");
+        data.put("TRANSACTIONS", "Транзакции");
+        data.put("TRANSFERS", "Переводы");
+        data.put("STATISTICS", "Статистика");
+        
+        data.put("TITLE", "Заголовок");
+        data.put("DATE", "Дата");
+        data.put("ACCOUNT", "Счет");
+        data.put("ARTICLE", "Статья");
+        data.put("AMOUNT", "Сумма");
+        data.put("NOTICE", "Примечание");
+        data.put("FROM_ACCOUNT", "Откуда");
+        data.put("TO_ACCOUNT", "Куда");
+        data.put("FROM_AMOUNT", "Списано");
+        data.put("TO_AMOUNT", "Зачислено");
+        data.put("CODE", "Валюта");
+        data.put("RATE", "Курс");
+        data.put("ON", "Включено");
+        data.put("BASE", "Базовая");
+
+        data.put("CHART_INCOME", "Incomes by articles");
+        data.put("CHART_EXP", "Expenses by articles");
+        data.put("CHART_NO_DATA", "No data for the selected period!");
     
     
     

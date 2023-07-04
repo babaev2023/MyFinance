@@ -17,7 +17,7 @@ final public class Style {
     public static final Color COLOR_BUTTON_BG_HOVER = Color.GREEN;
     public static final Color COLOR_LEFTPANEL_BALANCE = Color.WHITE;
     public static final Color COLOR_EXP = new Color(200, 0, 0);
-    public static final Color COLOR_INCOME = new Color(0, 100, 0);
+    public static final Color COLOR_INCOME = new Color(0, 155, 0);
     public static final Color COLOR_ON = Color.BLACK;
     public static final Color COLOR_OFF = new Color(170, 170, 170);
     

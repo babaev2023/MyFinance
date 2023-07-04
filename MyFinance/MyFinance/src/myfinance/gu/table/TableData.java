@@ -1,18 +1,84 @@
 
 package myfinance.gu.table;
 
+import java.awt.Point;
+import javax.swing.ImageIcon;
+import javax.swing.JPopupMenu;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import myfinance.gu.Refresh;
+import myfinance.gu.table.model.MainTableModel;
+import myfinance.gu.table.renderer.MainTableCellRenderer;
+import myfinance.gu.table.renderer.TableHeaderIconRenderer;
+import myfinance.settings.Style;
+import myfinance.settings.Text;
 
 /**
  *
  * @author Stepan Babaev
  */
-public class TableData extends JTable implements Refresh{
+abstract public class TableData extends JTable implements Refresh{
+    
+    
 
-    @Override
-    public void refresh() {
-        //
+   
+    private final String[] columns;
+    private final ImageIcon[] icons;
+    
+    public TableData(MainTableModel model, String[] columns, ImageIcon[] icons) {
+        super(model);
+        
+        this.columns = columns;
+        this.icons = icons;
+        
+        getTableHeader().setFont(Style.FONT_TABLE_HEADER);
+        setFont(Style.FONT_TABLE);
+        setRowHeight(getRowHeight() + Style.TABLE_ADD_ROW_HEIGHT);
+        
+        setAutoCreateRowSorter(true); //Сортировка
+        setPreferredScrollableViewportSize(Style.DIMENSION_TABLE_SHOW_SIZE); //Фиксируем размер таблицы
+        setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //Одиночное выделение
+        
+        //Добавили иконку в строках
+        for (int i = 0; i < columns.length; i++) {
+            getColumn(Text.get(columns[i])).setHeaderRenderer(new TableHeaderIconRenderer(icons[i]));
+        }
+        
+        
+        MainTableCellRenderer renderer = new MainTableCellRenderer();
+        setDefaultRenderer(String.class, renderer);
+        
+        
     }
     
+    @Override
+    public JPopupMenu getComponentPopupMenu() {
+        Point p = getMousePosition();
+        if (p != null) {
+            int row = rowAtPoint(p);
+            if (isRowSelected(row)) return super.getComponentPopupMenu();
+            else return null;
+        }
+        return super.getComponentPopupMenu();
+    }
+    
+    @Override
+    public void refresh() {
+        int selectedRow = getSelectedRow();
+        ((MainTableModel) getModel()).refresh();
+        for (int i = 0; i < columns.length; i++) {
+            getColumn(Text.get(columns[i])).setHeaderRenderer(new TableHeaderIconRenderer(icons[i]));
+        }
+        if (selectedRow != -1 && selectedRow < getRowCount()) {
+            setRowSelectionInterval(selectedRow, selectedRow);
+            requestFocus();
+        }
+        init();
+    }
+    
+    protected void init() {
+        
+    }
+
+        
 }

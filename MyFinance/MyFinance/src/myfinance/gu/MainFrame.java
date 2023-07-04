@@ -12,6 +12,8 @@ import myfinance.gu.dialog.ConfirmDialog;
 import myfinance.gu.dialog.ErrorDialog;
 import myfinance.gu.menu.MainMenu;
 import myfinance.gu.panel.LeftPanel;
+import myfinance.gu.panel.OverviewPanel;
+import myfinance.gu.panel.RightPanel;
 import myfinance.gu.toolbar.FunctionsToolBar;
 import myfinance.gu.toolbar.MainToolBar;
 import myfinance.settings.Style;
@@ -28,6 +30,7 @@ public class MainFrame extends JFrame implements Refresh {
     private final MainMenu mb;
     private final MainToolBar tb;
     private final LeftPanel leftPanel;
+    private RightPanel rightPanel;
     
     public MainFrame() {
         super(Text.get("PROGRAMM_NAME"));
@@ -86,6 +89,9 @@ public class MainFrame extends JFrame implements Refresh {
         
         //add(new MainDatePicker().getDatePicker(),constraints); //Test DatePicker
         
+        setRightPanel(new OverviewPanel(this));
+        
+        
         pack();
         setLocationRelativeTo(null);
         
@@ -104,6 +110,17 @@ public class MainFrame extends JFrame implements Refresh {
 
     public MainMenu getMenu() {
        return mb;
+    }
+
+    private void setRightPanel(RightPanel panel) {
+        if (rightPanel !=null) remove(rightPanel);
+        constraints.gridy =1;
+        constraints.gridx =1;
+        rightPanel = panel;
+        panel.setBorder(Style.BORDER_PANEL);
+        add(rightPanel,constraints);
+        pack();
+        
     }
     
 }
