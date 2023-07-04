@@ -17,6 +17,7 @@ import myfinance.gu.panel.CurrencyPanel;
 import myfinance.gu.panel.LeftPanel;
 import myfinance.gu.panel.OverviewPanel;
 import myfinance.gu.panel.RightPanel;
+import myfinance.gu.panel.StatisticsPanel;
 import myfinance.gu.panel.TransactionPanel;
 import myfinance.gu.panel.TransferPanel;
 import myfinance.gu.toolbar.FunctionsToolBar;
@@ -95,7 +96,7 @@ public class MainFrame extends JFrame implements Refresh {
         //add(new MainDatePicker().getDatePicker(),constraints); //Test DatePicker
         
         //setRightPanel(new ArticlePanel(this)); //Test ArticlePanel
-        setRightPanel(new TransactionPanel(this)); 
+        setRightPanel(new StatisticsPanel(this)); 
         
         pack();
         setLocationRelativeTo(null);

@@ -187,9 +187,9 @@ final public class Text {
         data.put("ON", "Включено");
         data.put("BASE", "Базовая");
 
-        data.put("CHART_INCOME", "Incomes by articles");
-        data.put("CHART_EXP", "Expenses by articles");
-        data.put("CHART_NO_DATA", "No data for the selected period!");
+        data.put("CHART_INCOME", "Доходы по статьям");
+        data.put("CHART_EXP", "Расходы по статьям");
+        data.put("CHART_NO_DATA", "Нет данных за выбранный период.");
     
     
     
