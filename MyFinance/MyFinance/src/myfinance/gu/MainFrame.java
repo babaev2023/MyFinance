@@ -96,7 +96,7 @@ public class MainFrame extends JFrame implements Refresh {
         //add(new MainDatePicker().getDatePicker(),constraints); //Test DatePicker
         
         //setRightPanel(new ArticlePanel(this)); //Test ArticlePanel
-        setRightPanel(new StatisticsPanel(this)); 
+        setRightPanel(new TransactionPanel(this)); 
         
         pack();
         setLocationRelativeTo(null);

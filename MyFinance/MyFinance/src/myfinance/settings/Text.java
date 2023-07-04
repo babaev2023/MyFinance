@@ -70,6 +70,12 @@ final public class Text {
         data.put("ERROR_RATE_INCORRECT", "Некорректное значение курса");
         data.put("ERROR_AMOUNT_FORMAT", "Некорректный формат суммы");
         data.put("ERROR_NO_BASE_CURRENCY", "Установите базовую валюта!");
+        data.put("ERROR_UPDATE_CURRENCIES", "Ошибка при обновлении курсов валют!");
+        data.put("CONFIRM_EXIT_TEXT", "Вы действительно хотите выйти? Все несохранённые данные будут потеряны!");
+        data.put("CONFIRM_EXIT_TITLE", "Подтверждение выхода");
+        data.put("CONFIRM_DELETE_TEXT", "Вы уверены, что хотите удалить данную запись?");
+        data.put("CONFIRM_DELETE_TITLE", "Подтверждение удаления");
+
         
         
         data.put("YES", "ДА");

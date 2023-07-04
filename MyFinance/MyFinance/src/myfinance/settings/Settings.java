@@ -3,6 +3,7 @@ package myfinance.settings;
 
 import java.io.File;
 import java.io.IOException;
+import static java.text.AttributedCharacterIterator.Attribute.LANGUAGE;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -71,7 +72,8 @@ final public class Settings {
     private static void save() {
         try {
             Wini ini = new Wini(FILE_SETTINGS);
-            ini.put("Settings","FILE_SAVE",FILE_SAVE.getAbsolutePath().replace("\\", "\\\\"));
+            if (FILE_SAVE != null) ini.put("Settings", "FILE_SAVE", FILE_SAVE.getAbsolutePath().replace("\\", "\\\\"));
+            ini.put("Settings", "LANGUAGE", LANGUAGE);
             ini.store();
         } catch (IOException ex) {
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);

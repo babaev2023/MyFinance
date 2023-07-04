@@ -16,7 +16,7 @@
             <base>false</base>
             <code>USD</code>
             <on>true</on>
-            <rate>88.3844</rate>
+            <rate>89.3255</rate>
             <title>Доллар</title>
         </currency>
         <startAmount>0.0</startAmount>
@@ -70,14 +70,14 @@
         <base>false</base>
         <code>USD</code>
         <on>true</on>
-        <rate>88.3844</rate>
+        <rate>89.3255</rate>
         <title>Доллар</title>
     </currencies>
     <currencies>
         <base>false</base>
         <code>EUR</code>
         <on>false</on>
-        <rate>96.0195</rate>
+        <rate>97.2582</rate>
         <title>Евро</title>
     </currencies>
     <transactions>
