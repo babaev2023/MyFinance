@@ -172,7 +172,7 @@ final public class Text {
         data.put("TRANSFERS", "Переводы");
         data.put("STATISTICS", "Статистика");
         
-        data.put("TITLE", "Заголовок");
+        data.put("TITLE", "Название");
         data.put("DATE", "Дата");
         data.put("ACCOUNT", "Счет");
         data.put("ARTICLE", "Статья");
