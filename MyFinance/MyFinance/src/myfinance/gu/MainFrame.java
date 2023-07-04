@@ -12,6 +12,7 @@ import myfinance.gu.dialog.ConfirmDialog;
 import myfinance.gu.dialog.ErrorDialog;
 import myfinance.gu.menu.MainMenu;
 import myfinance.gu.panel.AccountPanel;
+import myfinance.gu.panel.ArticlePanel;
 import myfinance.gu.panel.LeftPanel;
 import myfinance.gu.panel.OverviewPanel;
 import myfinance.gu.panel.RightPanel;
@@ -90,7 +91,7 @@ public class MainFrame extends JFrame implements Refresh {
         
         //add(new MainDatePicker().getDatePicker(),constraints); //Test DatePicker
         
-        setRightPanel(new AccountPanel(this));
+        setRightPanel(new ArticlePanel(this));
         
         
         pack();
